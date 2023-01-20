@@ -6,7 +6,7 @@ import { PostDto } from './dtos/PostDto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('/')
+  @Post('/')
   getSentences(@Body() payload: PostDto) {
     return this.appService.translateSentences(payload);
   }
