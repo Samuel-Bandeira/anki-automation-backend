@@ -7,7 +7,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post('/')
-  getSentences(@Body() payload: PostDto) {
-    return this.appService.translateSentences(payload);
+  async getSentences(@Body() payload: PostDto) {
+    const response = this.appService.translateSentences(payload);
+    return response;
   }
 }
